@@ -1,4 +1,5 @@
-<?php require 'session.php'; ?>
+<?php require 'session.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +10,10 @@
 </head>
 <body>
 <!-- De Navbar -->
-<nav class="navbar bg-orange">
-    <div class="container-fluid">
-        <a class="navbar-brand fw-bold blue" href="#">Ga Lekker Reizen</a>
-    </div>
-</nav>
+<?php include 'navbar.php';?>
 <div class="pt-5 container">
 <?php
-
+echo $_SESSION['level'];
 require_once 'config.php';
 $ID = $_GET[reis_id];
 $query = "SELECT * FROM `reis` WHERE reis_id = " . $ID;;
@@ -39,6 +36,18 @@ while ($rij = mysqli_fetch_array($result)) {
   </div>
   </div>
 ";
+        if($_SESSION['level'] == 2){
+                    echo "
+            <div class='form-group'>
+                            <label for='password' class='text-dark'>Titel:</label><br>
+                            <input type='text' value=' " . $item['titel'] ."' name='titel' id='opmerking' class='form-control'>
+                        </div>
+                                <div class='form-group'>
+                            <label for='password' class='text-dark'>Omschrijving:</label><br>
+                            <input type='text' value=' " . $item['omschrijving'] ."' name='omschrijving' id='omschrijving' class='form-control'>
+                        </div>
+";
+        }
     }
 }
 

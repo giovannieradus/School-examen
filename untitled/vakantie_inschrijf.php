@@ -1,4 +1,5 @@
-<?php require 'session.php'; ?>
+<?php require 'session.php';
+?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -9,11 +10,7 @@
     </head>
     <body>
     <!-- De Navbar -->
-    <nav class="navbar bg-orange">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold blue" href="#">Ga Lekker Reizen</a>
-        </div>
-    </nav>
+<?php include 'navbar.php';?>
     <div class="pt-5 container">
 
 <?php
@@ -37,12 +34,12 @@ while ($rij = mysqli_fetch_array($result)) {
         </div>
         </div>
              <div class='d-flex justify-content-center'>
-     <form id='login-form' class='form' action='login_verwerk.php' method='post'>
+     <form id='login-form' class='form' action='vakantie_inschrijf_verwerk.php' method='post'>
                         <div class='form-group'>
-                            <input type='hidden' value='" . $_SESSION['student_id'] . "' name='student_id' id='student_id' class='form-control'>
+                            <input type='text' value='" . $_SESSION['student_id'] . "' name='student_id' id='student_id' class='form-control'>
                         </div>
                             <div class='form-group'>
-                            <input type='hidden' value='" . $_GET[reis_id] . "' name='reis_id' id='reis_id' class='form-control'>
+                            <input type='text' value='" . $item['reis_id'] . "' name='reis_id' id='reis_id' class='form-control'>
                         </div>
                            
                         <div class='form-group'>
@@ -51,7 +48,7 @@ while ($rij = mysqli_fetch_array($result)) {
                         </div>
                         <div class='form-group'>
                             <label for='password' class='text-dark'>Opmerkingen:</label><br>
-                            <input type='text' name='opmerkingen' id='opmerkingen' class='form-control'>
+                            <input type='text' name='opmerking' id='opmerking' class='form-control'>
                         </div>
                         <div class='form-group'>
                             <input type='submit' name='Inlog' class='btn btn-light btn-md' value='Schrijf In'>

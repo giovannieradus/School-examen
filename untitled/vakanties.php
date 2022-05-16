@@ -9,12 +9,9 @@
 </head>
 <body>
 <!-- De Navbar -->
-<nav class="navbar bg-orange">
-    <div class="container-fluid">
-        <a class="navbar-brand fw-bold blue" href="#">Ga Lekker Reizen</a>
-    </div>
-</nav>
-<div class="pt-5 container">
+<?php include 'navbar.php';?>
+
+<div class="pt-2 container">
     <div class="row">
     <?php
 
@@ -31,7 +28,7 @@
         foreach ($result as $item) {
             echo "
 <div class='col-4'>
-        <div class='card p-4'>
+        <div class='card p-4 mt-3'>
   <div class='content'>
       <div class='content-details fadeIn-top'>
         <h2>" . $item['titel'] . "</h2>
