@@ -13,46 +13,11 @@
         <a class="navbar-brand fw-bold blue" href="#">Ga Lekker Reizen</a>
     </div>
 </nav>
-<div class="pt-5 container">
-    <div class="row">
-    <?php
-
-    require_once 'config.php';
-
-    $query = "SELECT * FROM `reis`" ;
-    $result = mysqli_query($mysqli, $query);
-    if (mysqli_num_rows($result) == 0)
-    {
-        echo "<p>Er zijn geen resultaten gevonden.</p>";
-    }
-    while ($rij = mysqli_fetch_array ($result) )
-    {
-        foreach ($result as $item) {
-            echo "
-<div class='col-4'>
-        <div class='card p-4'>
-  <div class='content'>
-      <div class='content-details fadeIn-top'>
-        <h2>" . $item['titel'] . "</h2>
-        <span class='fst-italic'>" . $item['bestemming'] . "</span>
-        <p class='fw-bold'>" . $item['begin_datum'] . " - " . $item['eind_datum'] . "  </p>
-        <a href='vakantie_detail.php?reis_id=" .$item['reis_id'] ."' class='btn btn-primary bg-orange'>Meer Info</a>
-        
-        
-        <p></p>
-      </div>
-    </a>
-  </div>
-  </div>
-  </div>
-";
-        }
-    }
-
-    ?>
-
+<section class="bg-image pb-5 pt-5">
+    <div class="container pt-5 pb-5">
+    <h1 class="text-white text-center">Lekker naar de zon?</h1>
+        <div class="d-flex justify-content-center">
+    <a href="vakanties.php" class="btn btn-primary bg-orange px-4 ">Log in</a>
+        </div>
     </div>
-</div>
-</body>
-<script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</html>
+</section>

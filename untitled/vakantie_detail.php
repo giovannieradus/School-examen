@@ -1,3 +1,4 @@
+<?php require 'session.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,6 @@
 require_once 'config.php';
 $ID = $_GET[reis_id];
 $query = "SELECT * FROM `reis` WHERE reis_id = " . $ID;;
-echo $query;
 $result = mysqli_query($mysqli, $query);
 if (mysqli_num_rows($result) == 0) {
     echo "<p>Er zijn geen resultaten gevonden.</p>";
@@ -34,7 +34,7 @@ while ($rij = mysqli_fetch_array($result)) {
         <p>" . $item['omschrijving'] . "</p>        
         <h3 class='fst-italic'>" . $item['bestemming'] . "</h3>
         <p class='fw-bold'>" . $item['begin_datum'] . " - " . $item['eind_datum'] . "  </p>
-        <a href='vakantie_detail.php?reis_id=" . $item['reis_id'] . "' class='btn btn-primary bg-orange'>Meer Info</a>
+        <a href='vakantie_inschrijf.php?reis_id=" . $item['reis_id'] . "' class='btn btn-primary bg-orange'>Schrijf je in</a>
        
   </div>
   </div>

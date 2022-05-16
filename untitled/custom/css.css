@@ -7,7 +7,14 @@
 
 .bg-orange{
     background-color: #FF7901;
+    border:#FF7901 ;
 }
 .bg-blue{
     background-color: #0177BE;
+}
+.bg-image{
+    background-image: url("https://www.majstra.com/wp-content/uploads/beach-bora-bora-clouds-753626.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
