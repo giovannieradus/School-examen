@@ -9,6 +9,15 @@
     background-color: #FF7901;
     border:#FF7901 ;
 }
+
+.bg-orange:hover{
+    transition: 0.5s;
+    background-color: #cd5900;
+    border: #cd5900;
+}
+.bg-footer{
+    background-color: #FF7901;
+}
 .bg-blue{
     background-color: #0177BE;
 }
@@ -17,4 +26,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+.bg-image-login{
+    background: rgb(255,121,1);
+    background: linear-gradient(90deg, rgba(255,121,1,1) 0%, rgba(255,133,0,1) 32%, rgba(0,116,255,1) 65%, rgba(1,119,190,1) 100%);
 }
